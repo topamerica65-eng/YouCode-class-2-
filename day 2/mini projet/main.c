@@ -8,7 +8,7 @@ int main() {
     char auteur[100][30];  
     float prix[100];        
     int quantite[100];        
-    int i, m ;    
+    int i, m = 0 ;    
     int choix;
     char titre_rechercher[30];
     do {
@@ -24,16 +24,17 @@ int main() {
         scanf("%d", &choix);
         getchar();
         switch(choix){
-        case 1 : 
+        case 1 :
                printf("Entrer le titre de livre : ");
-               scanf("%s",titre[m]);
+               scanf("%s",&titre[m]);
                printf("Entrer l'auteur de livre : ");
-               scanf("%s",auteur[m]);
+               scanf("%s",&auteur[m]);
                printf("Entrer le prix de livre : ");
-               scanf("%lf",prix[m]);
+               scanf("%f",&prix[m]);
                printf("Entrer la quantite des livres : ");
-               scanf("%d",quantite[m]);
+               scanf("%d",&quantite[m]);
                m++;
+        
                break;
         case 2 : 
                 printf("La liste des livres est : ");
@@ -41,7 +42,7 @@ int main() {
                 printf("Le livre %d : ",i+1);
                 printf("Le titre de livre est : %s",titre[i]);
                 printf("L'auteur de livre est : %s",auteur[i]);
-                printf("Le prix de livre est : %lf",prix[i]);
+                printf("Le prix de livre est : %f",prix[i]);
                 printf("La quantite des livres est : %d",quantite[i]);
                 break;
                 }
@@ -85,8 +86,11 @@ int main() {
 			scanf("%s",titre_rechercher);
             for(i=0;i<m;i++)
 			if(strcmp(titre[i],titre_rechercher)==0){
+			livreTrouve = 1;	
             }
-			
+			if(livreTrouve != 0)
+               printf("Le livre n'est pas disponible ");
+			   break;  
             
             
 			
