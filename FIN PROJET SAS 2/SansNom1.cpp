@@ -467,6 +467,8 @@ void statistiques()
 	char max[50],min[50];
     int S = 0;
     tir_age();
+    int  maxrep = 0; 
+    char comp[20];
 							for(int i=0;i<index;i++){
 							S +=  a0[i].id;
 							}
@@ -475,7 +477,26 @@ void statistiques()
 							printf("Age moyen des animaux est %d\n",M);
 							printf("Plus jeune animal est %s age %d\n",a0[0].nom,a0[0].age);
 							printf("Plus vieux est %s age %d \n",a0[index-1].nom,a0[index-1].age);
-							printf("Les especes les plus representees est : \n");
+							for (int i = 0 ; i < index ; i++)
+           {
+               int count = 1;
+               for (int j = i + 1; j < index ; j++)
+               {
+                   if (strcmp(a0[i].espece , a0[j].espece) == 0)
+                   {
+
+                       count++;
+
+                   }
+               }
+               if (count > maxrep)
+               {
+                   maxrep = count;
+                   strcpy(comp , a0[i].espece);
+               }
+           }
+           printf("Le espece le plus representees : %s", comp);
+					
 }
 int main(){  
     int max,min,i=0; 
