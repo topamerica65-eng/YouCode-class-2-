@@ -29,10 +29,10 @@ struct zoo
           {6, "Marty", "Zebre", 6, "Savane", 300.2},
           {7, "Gloria", "Hippopotame", 10, "Riviere", 450},
           {8, "Alex", "Lion", 7, "Savane", 200},
-          {9, "Julien", "L駑urien", 3, "Jungle", 12.5},
+          {9, "Julien", "Lﾃｩmurien", 3, "Jungle", 12.5},
           {10, "Melman", "Girafe", 9, "Savane", 390.8},
           {11, "Timon", "Suricate", 2, "Desert", 1.2},
-          {12, "Pumbaa", "Phacoch鑽e", 5, "Savane", 120},
+          {12, "Pumbaa", "Phacochﾃｨre", 5, "Savane", 120},
           {13, "Scar", "Lion", 11, "Savane", 210.4},
           {14, "Kaa", "Serpent", 6, "Jungle", 45},
           {15, "Iko", "Perroquet", 4, "Jungle", 2.1},
@@ -293,7 +293,7 @@ void afficher_animaux()
 }
 void modifier_habitat()
 {
-printf(" ====> Modifier l'habitat d置n animal. <====\n");
+printf(" ====> Modifier l'habitat dﾂ置n animal. <====\n");
 										int idTrouve=0;
 										int i=0;
                                         printf("Entrer l'id de l'animal que vous voulez modifier l'habitat : ");
@@ -320,7 +320,7 @@ printf(" ====> Modifier l'habitat d置n animal. <====\n");
 }
 void modifier_age()
 {
-printf(" ====> Modifier l'age d置n animal. <====\n");
+printf(" ====> Modifier l'age dﾂ置n animal. <====\n");
 										int idTrouve=0;
 										int i=0;
                                         printf("Entrer l'id de l'animal que vous voulez modifier l'age : ");
@@ -467,7 +467,7 @@ void statistiques()
 	char max[50],min[50];
     int S = 0;
     tir_age();
-    int  maxrep = 0; 
+    int  maxdej = 0; 
     char comp[20];
 							for(int i=0;i<index;i++){
 							S +=  a0[i].id;
@@ -489,9 +489,9 @@ void statistiques()
 
                    }
                }
-               if (count > maxrep)
+               if (count > maxdej)
                {
-                   maxrep = count;
+                   maxdej = count;
                    strcpy(comp , a0[i].espece);
                }
            }
@@ -542,7 +542,7 @@ int main(){
                   break;
                   case 3 :
 									printf(" ====> Modifier d'un animal <====");
-									printf(" 1.  Modifier l'habitat d置n animal.\n 2.  Modifier l'age.\n");
+									printf(" 1.  Modifier l'habitat dﾂ置n animal.\n 2.  Modifier l'age.\n");
 									printf("Choisir la modification  d'animal qui est prefere : ");
 									scanf("%d",&choix);
                                     getchar();
