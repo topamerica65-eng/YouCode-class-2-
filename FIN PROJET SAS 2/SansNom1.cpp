@@ -3,6 +3,7 @@
 
 int index = 20;
 int i = 0;
+char typAnimal[20];
 char nom_rechercher[200];
 int animalTrouve = 0 ;
 char habitat_rechercher[200];
@@ -19,7 +20,7 @@ struct zoo
 	char habitat[200];
 	float poids;
 };
- struct zoo a0[200] =
+ struct zoo animaux[200] =
       {
           {1, "Simba", "Lion", 5, "Savane", 190.5},
           {2, "Nala", "Lion", 4, "Savane", 175},
@@ -52,11 +53,11 @@ struct zoo
         j = i + 1;
         while (j < index)
         {
-            if (strcmp(a0[i].nom, a0[j].nom) > 0)
+            if (strcmp(animaux[i].nom, animaux[j].nom) > 0)
             {
-                tmp = a0[i];
-                a0[i] = a0[j];
-                a0[j] = tmp;
+                tmp = animaux[i];
+                animaux[i] = animaux[j];
+                animaux[j] = tmp;
             }
             j++;
         }
@@ -74,11 +75,11 @@ void tir_age() {
         j = i + 1;
         while (j < index)
         {
-            if(a0[i].age, a0[j].age > 0)
+            if(animaux[i].age, animaux[j].age > 0)
             {
-                tmp = a0[i];
-                a0[i] = a0[j];
-                a0[j] = tmp;
+                tmp = animaux[i];
+                animaux[i] = animaux[j];
+                animaux[j] = tmp;
             }
             j++;
         }
@@ -87,9 +88,9 @@ void tir_age() {
 }
 		  void ajouter_animal()
 		  {
-		  a0[index].id = index + 1;
+		  animaux[index].id = index + 1;
           printf("Entrer le nom d'animal : ");
-          fgets(a0[index].nom, sizeof(a0[index].nom),stdin);
+          fgets(animaux[index].nom, sizeof(animaux[index].nom),stdin);
           printf("Choisir l'espece d'animal : ");
           printf("\n1.  Lion 2.  Tigre 3.  Ours 4.  Elephant 5.  Zebre"
           "6.  Hippopotame 7.  Lemurien 8.  Girafe 9.  Suricate 10.  Serpent"
@@ -100,60 +101,60 @@ void tir_age() {
 		  switch(choix)
 		  {
 		  case 1 :
-		  strcpy(a0[index].espece,"Lion");
+		  strcpy(animaux[index].espece,"Lion");
 		  break;
 		  case 2 :
-		  strcpy(a0[index].espece,"Tigre");
+		  strcpy(animaux[index].espece,"Tigre");
 		  break;
 		  case 3 :
-		  strcpy(a0[index].espece,"Ours");
+		  strcpy(animaux[index].espece,"Ours");
 		  break;
 		  case 4 :
-		  strcpy(a0[index].espece,"Elephant");
+		  strcpy(animaux[index].espece,"Elephant");
 		  break;
 		  case 5 :
-		  strcpy(a0[index].espece,"Zebre");
+		  strcpy(animaux[index].espece,"Zebre");
 		  break;
 		  case 6 :
-		  strcpy(a0[index].espece,"Hippopotame");
+		  strcpy(animaux[index].espece,"Hippopotame");
 		  break;
 		  case 7 :
-		  strcpy(a0[index].espece,"Lemurien");
+		  strcpy(animaux[index].espece,"Lemurien");
 		  break;
 		  case 8 :
-		  strcpy(a0[index].espece,"Girafe");
+		  strcpy(animaux[index].espece,"Girafe");
 		  break;
 		  case 9 :
-		  strcpy(a0[index].espece,"Suricate");
+		  strcpy(animaux[index].espece,"Suricate");
 		  break;
 		  case 10 :
-		  strcpy(a0[index].espece,"Serpent");
+		  strcpy(animaux[index].espece,"Serpent");
 		  break;
 		  case 11 :
-		  strcpy(a0[index].espece,"Perroquet");
+		  strcpy(animaux[index].espece,"Perroquet");
 		  break;
 		  case 12 :
-		  strcpy(a0[index].espece,"sauvaChienge");
+		  strcpy(animaux[index].espece,"sauvaChienge");
 		  break;
 		  case 13 :
-		  strcpy(a0[index].espece,"Tortue");
+		  strcpy(animaux[index].espece,"Tortue");
 		  break;
 		  case 14 :
-		  strcpy(a0[index].espece,"Oiseau");
+		  strcpy(animaux[index].espece,"Oiseau");
 		  break;
 		  case 15 :
-		  strcpy(a0[index].espece,"Gorille");
+		  strcpy(animaux[index].espece,"Gorille");
 		  break;
 		  default :
 		  printf("Le choix invalide \nEntrer les choix disponibles ");
 		  }
 		  do{
 		  printf("Entrer l'age d'animal : ");
-		  while(scanf("%d", &a0[index].age)!=1){
+		  while(scanf("%d", &animaux[index].age)!=1){
 		  printf("Entrer l'age d'animal : ");
 		  	while(getchar()!='\n');
 		  }
-		  }while(a0[index].age<0 || a0[index].age>30);
+		  }while(animaux[index].age<0 || animaux[index].age>30);
 		  printf("Choisir l'habitat d'animal : ");
 		  printf("\n1.  Savane 2.  Jungle 3.  Foret 4.  Riviere 5.  Desert\n");
 		  printf("Votre choix : ");
@@ -162,27 +163,27 @@ void tir_age() {
 		  switch(choix)
 		  {
 		  case 1 :
-		  strcpy(a0[index].habitat,"Savane");
+		  strcpy(animaux[index].habitat,"Savane");
 		  break;
                     case 2 :
-                    strcpy(a0[index].habitat,"Jungle");
+                    strcpy(animaux[index].habitat,"Jungle");
                     break;
                     case 3 :
-                    strcpy(a0[index].habitat,"Foret");
+                    strcpy(animaux[index].habitat,"Foret");
                     break;
                     case 4 :
-                    strcpy(a0[index].habitat,"Riviere");
+                    strcpy(animaux[index].habitat,"Riviere");
                     break;
 				    case 5 :
-                    strcpy(a0[index].habitat,"Desert");
+                    strcpy(animaux[index].habitat,"Desert");
                     break;
 				    default :
 					printf("Le choix invalide \nEntrer les choix disponibles ");
                     }
                 do{
                   printf("Entrer le poids d'animal : ");
-                  scanf("%f", &a0[index].poids);
-                  }while(a0[index].poids<0);
+                  scanf("%f", &animaux[index].poids);
+                  }while(animaux[index].poids<0);
                printf("L'animal ajoute avec succes\n");
                index++;
                }
@@ -212,12 +213,12 @@ void afficher_animaux()
 					  i=0;
 	                  printf("Afficher la liste complete : \n");
 					  while(i<index){
-					  printf("\n==>  %d  <==\n",a0[i].id);
-	                  printf("\n     Le nom est : %s ",a0[i].nom);
-	                  printf("    L'espece est : %s ",a0[i].espece);
-	                  printf("    L'age est : %d ",a0[i].age);
-	                  printf("    L'habitat est : %s ",a0[i].habitat);
-	                  printf("    Le poids est : %.2f ",a0[i].poids);
+					  printf("\n==>  %d  <==\n",animaux[i].id);
+	                  printf("\n     Le nom est : %s ",animaux[i].nom);
+	                  printf("    L'espece est : %s ",animaux[i].espece);
+	                  printf("    L'age est : %d ",animaux[i].age);
+	                  printf("    L'habitat est : %s ",animaux[i].habitat);
+	                  printf("    Le poids est : %.2f ",animaux[i].poids);
 					  i++;
 	                  }
 					  break;
@@ -226,12 +227,12 @@ void afficher_animaux()
 					  tir_nom();
 	                  printf("Trier par nom : \n");
 	                  while(i<index){
-					  printf("\n==>  %d  <==\n",a0[i].id);
-	                  printf("\n     Le nom est : %s ",a0[i].nom);
-	                  printf("    L'espece est : %s ",a0[i].espece);
-	                  printf("    L'age est : %d ",a0[i].age);
-	                  printf("    L'habitat est : %s ",a0[i].habitat);
-	                  printf("    Le poids est : %.2f ",a0[i].poids);
+					  printf("\n==>  %d  <==\n",animaux[i].id);
+	                  printf("\n     Le nom est : %s ",animaux[i].nom);
+	                  printf("    L'espece est : %s ",animaux[i].espece);
+	                  printf("    L'age est : %d ",animaux[i].age);
+	                  printf("    L'habitat est : %s ",animaux[i].habitat);
+	                  printf("    Le poids est : %.2f ",animaux[i].poids);
 					  i++;
 	                  }
 	                  break;
@@ -240,12 +241,12 @@ void afficher_animaux()
                	       tir_age();
                        printf("Trier par age : ");
                        while(i<index){
-						  printf("\n==>  %d  <==\n",a0[i].id);
-		                  printf("\n     Le nom est : %s ",a0[i].nom);
-		                  printf("    L'espece est : %s ",a0[i].espece);
-		                  printf("    L'age est : %d ",a0[i].age);
-		                  printf("    L'habitat est : %s ",a0[i].habitat);
-		                  printf("    Le poids est : %.2f ",a0[i].poids);
+						  printf("\n==>  %d  <==\n",animaux[i].id);
+		                  printf("\n     Le nom est : %s ",animaux[i].nom);
+		                  printf("    L'espece est : %s ",animaux[i].espece);
+		                  printf("    L'age est : %d ",animaux[i].age);
+		                  printf("    L'habitat est : %s ",animaux[i].habitat);
+		                  printf("    Le poids est : %.2f ",animaux[i].poids);
 						  i++;
 		                }
                        break;
@@ -277,8 +278,8 @@ void afficher_animaux()
 						}
 	                    printf("Animaux vivant dans l'habitat %s :\n", habitat_rechercher);
                          for (i = 0; i < index; i++) {
-                            if (strcmp(a0[i].habitat, habitat_rechercher) == 0) {
-                                printf("id: %d, Nom: %s, espesce: %s, age: %d, Habitat: %s, poids : %f\n", a0[i].id, a0[i].nom, a0[i].espece, a0[i].age, a0[i].habitat, a0[i].poids);
+                            if (strcmp(animaux[i].habitat, habitat_rechercher) == 0) {
+                                printf("id: %d, Nom: %s, espesce: %s, age: %d, Habitat: %s, poids : %f\n", animaux[i].id, animaux[i].nom, animaux[i].espece, animaux[i].age, animaux[i].habitat, animaux[i].poids);
                                 animalTrouve = 1;
                              }
                          }
@@ -293,14 +294,14 @@ void afficher_animaux()
 }
 void modifier_habitat()
 {
-printf(" ====> Modifier l'habitat dun animal. <====\n");
+printf(" ====> Modifier l'habitat d’un animal. <====\n");
 										int idTrouve=0;
 										int i=0;
                                         printf("Entrer l'id de l'animal que vous voulez modifier l'habitat : ");
                                         scanf(" %d",&idrechercher);
 										while(i<index)
 										{
-										if(a0[i].id == idrechercher)
+										if(animaux[i].id == idrechercher)
 										{
 										idTrouve = 1;
 									
@@ -310,7 +311,7 @@ printf(" ====> Modifier l'habitat dun animal. <====\n");
 										if(idTrouve==1)
 										{
 										printf("Entrer le nouveau habitat :");
-										scanf("%s",a0[index].habitat);
+										scanf("%s",animaux[index].habitat);
 										printf("L'habitat est modifier avec succes\n");
 										}
 										else
@@ -320,14 +321,14 @@ printf(" ====> Modifier l'habitat dun animal. <====\n");
 }
 void modifier_age()
 {
-printf(" ====> Modifier l'age dun animal. <====\n");
+printf(" ====> Modifier l'age d’un animal. <====\n");
 										int idTrouve=0;
 										int i=0;
                                         printf("Entrer l'id de l'animal que vous voulez modifier l'age : ");
                                         scanf(" %d",idrechercher);
 										while(i<index)
 										{
-										if(a0[i].id == idrechercher)
+										if(animaux[i].id == idrechercher)
 										{
 										idTrouve = 1;
 										break;
@@ -337,7 +338,7 @@ printf(" ====> Modifier l'age dun animal. <====\n");
 										if(idTrouve==1)
 										{
 										printf("Entrer le nouveau l'age :");
-										scanf("%d",a0[index].age);
+										scanf("%d",animaux[index].age);
 										printf("L'age est modifier avec succes\n");
 										}
 										else
@@ -353,12 +354,12 @@ int id_Supprimer;
 			    scanf(" %d",&id_Supprimer);
 			     for(int i = 0; i < index; i++)
 				 {
-                      if(a0[i].id == id_Supprimer)
+                      if(animaux[i].id == id_Supprimer)
 					  {
                       trouve = 1;
                       for(int j = i; j < index - 1; j++)
 					  {
-                       a0[j] = a0[j + 1];
+                       animaux[j] = animaux[j + 1];
                       }
                     break;
                       }
@@ -380,7 +381,7 @@ int i=0;
                                 scanf(" %d",&idrechercher);
                                  while(i<index)
 								 {
-								if(a0[i].id == idrechercher)
+								if(animaux[i].id == idrechercher)
 								{
 								printf("L'id est disponible\n");
 								idTrouve = 1;
@@ -390,12 +391,12 @@ int i=0;
 								}
 								if(idTrouve==1)
 								{
-								printf("Id : %d\n",a0[i].id);
-								printf("Nom : %s\n",a0[i].nom);
-								printf("Espece : %s\n",a0[i].nom);
-								printf("Age : %d\n",a0[i].age);
-								printf("Habitat : %s\n",a0[i].habitat);
-								printf("Poids : %f\n",a0[i].poids);
+								printf("Id : %d\n",animaux[i].id);
+								printf("Nom : %s\n",animaux[i].nom);
+								printf("Espece : %s\n",animaux[i].nom);
+								printf("Age : %d\n",animaux[i].age);
+								printf("Habitat : %s\n",animaux[i].habitat);
+								printf("Poids : %f\n",animaux[i].poids);
 								i++;
 								}
 								if(idTrouve==0){
@@ -410,7 +411,7 @@ int i=0;
                            scanf(" %s",nom_rechercher);
 						   while(i<index)
 						   {
-						   if(a0[i].nom == nom_rechercher)
+						   if(animaux[i].nom == nom_rechercher)
 						   {
 						   printf("le nom est disponible\n");
 						   nom_Trouve = 1;
@@ -420,12 +421,12 @@ int i=0;
 						   }
 						   if(nom_Trouve==1)
 						   {
-						   printf("Id : %d\n",a0[i].id);
-						   printf("Nom : %s\n",a0[i].nom);
-						   printf("Espece : %s\n",a0[i].espece);
-						   printf("Age : %d\n",a0[i].age);
-						   printf("Habitat : %s\n",a0[i].habitat);
-						   printf("Poids : %f\n",a0[i].poids);
+						   printf("Id : %d\n",animaux[i].id);
+						   printf("Nom : %s\n",animaux[i].nom);
+						   printf("Espece : %s\n",animaux[i].espece);
+						   printf("Age : %d\n",animaux[i].age);
+						   printf("Habitat : %s\n",animaux[i].habitat);
+						   printf("Poids : %f\n",animaux[i].poids);
 						   i++;
 							}
 							if(nom_Trouve==0){
@@ -440,7 +441,7 @@ int i=0;
                            scanf(" %s",idrechercher);
 						   while(i<index)
 						   {
-						  if(strcmp(a0[i].espece, idrechercher1) == 0)
+						  if(strcmp(animaux[i].espece, idrechercher1) == 0)
 						   {
 						   printf("l'espece est disponible\n");
 						   espece_Trouve = 1;
@@ -450,12 +451,12 @@ int i=0;
 						  }
 						   if(espece_Trouve==1)
 						   {
-						   printf("Id : %d\n",a0[i].id);
-						   printf("Nom : %s\n",a0[i].nom);
-						   printf("Espece : %s\n",a0[i].espece);
-						   printf("Age : %d\n",a0[i].age);
-						   printf("Habitat : %s\n",a0[i].habitat);
-						   printf("Poids : %f\n",a0[i].poids);
+						   printf("Id : %d\n",animaux[i].id);
+						   printf("Nom : %s\n",animaux[i].nom);
+						   printf("Espece : %s\n",animaux[i].espece);
+						   printf("Age : %d\n",animaux[i].age);
+						   printf("Habitat : %s\n",animaux[i].habitat);
+						   printf("Poids : %f\n",animaux[i].poids);
 						   i++;
 						   }
 							if(espece_Trouve==0){
@@ -464,35 +465,50 @@ int i=0;
 }
 void statistiques()
 {
-	char max[50],min[50];
+	char plusVieux[50],plusJeune[50];
+	int MaxAge = animaux[0].age;
+	int MinAge = animaux[0].age;
+	
+	
     int S = 0;
     tir_age();
-    int  maxdej = 0; 
+    int  maxrep = 0; 
     char comp[20];
 							for(int i=0;i<index;i++){
-							S +=  a0[i].id;
+							S +=  animaux[i].age;
+							if(animaux[i].age> MaxAge)
+							{
+								MaxAge = animaux[i].age;
+								strcpy(plusVieux,animaux[i].nom);
 							}
-							printf("Nombre total d'animaux dans le zoo est : %d\n",index+1);
-							float M = S / index ;
-							printf("Age moyen des animaux est %d\n",M);
-							printf("Plus jeune animal est %s age %d\n",a0[0].nom,a0[0].age);
-							printf("Plus vieux est %s age %d \n",a0[index-1].nom,a0[index-1].age);
+							if(animaux[i].age< MaxAge)
+							{
+								MinAge = animaux[i].age;
+								strcpy(plusJeune,animaux[i].nom);
+							}
+							}
+							printf("Nombre total d'animaux dans le zoo est : %d\n",index);
+							float M = (float)S / index ;
+							printf("Age moyen des animaux est %.2f\n",M);
+							
+							printf("Plus vieux animal est %s age %d\n", plusVieux, MaxAge);
+							printf("Plus jeune est %s age %d \n", plusJeune, MinAge);
 							for (int i = 0 ; i < index ; i++)
            {
                int count = 1;
                for (int j = i + 1; j < index ; j++)
                {
-                   if (strcmp(a0[i].espece , a0[j].espece) == 0)
+                   if (strcmp(animaux[i].espece , animaux[j].espece) == 0)
                    {
 
                        count++;
 
                    }
                }
-               if (count > maxdej)
+               if (count > maxrep)
                {
-                   maxdej = count;
-                   strcpy(comp , a0[i].espece);
+                   maxrep = count;
+                   strcpy(comp , animaux[i].espece);
                }
            }
            printf("Le espece le plus representees : %s", comp);
@@ -501,6 +517,7 @@ void statistiques()
 int main(){  
     int max,min,i=0; 
     int choix1, choix;
+    char typeAnimal[20];
     do{ 
         printf("\n==== MENU ====\n");
         printf("1.  Ajouter un animal\n");
@@ -542,7 +559,7 @@ int main(){
                   break;
                   case 3 :
 									printf(" ====> Modifier d'un animal <====");
-									printf(" 1.  Modifier l'habitat dun animal.\n 2.  Modifier l'age.\n");
+									printf(" 1.  Modifier l'habitat d’un animal.\n 2.  Modifier l'age.\n");
 									printf("Choisir la modification  d'animal qui est prefere : ");
 									scanf("%d",&choix);
                                     getchar();
